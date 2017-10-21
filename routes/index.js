@@ -1,7 +1,8 @@
 const router = require('express').Router()
+const storeController = require('../controllers/store.controller')
 
-router.get('/', (req, res) => {
-  res.send('Hey! It works! 🚀')
-})
+router.get('/', storeController.homePage)
+router.get('/add', storeController.addStore)
+router.post('/add', storeController.createStore)
 
 module.exports = router

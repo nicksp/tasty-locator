@@ -18,6 +18,9 @@ mongoose.connect(process.env.DATABASE_URI, {
 })
 mongoose.connection.on('error', err => console.error(`🙅 🚫 🙅 🚫 🙅 🚫 🙅 🚫  → ${err.name}: ${err.message}`))
 
+// Import models
+require('./models/Store')
+
 // Start our app
 const app = require('./app')
 const port = process.env.PORT || 2017
