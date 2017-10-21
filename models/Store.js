@@ -16,7 +16,7 @@ const storeSchema = mongoose.Schema({
   tags: [String]
 })
 
-storeSchema.pre('save', next => {
+storeSchema.pre('save', function(next) {
   if (!this.isModified('name')) {
     return next()
   }
