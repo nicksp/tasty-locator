@@ -64,5 +64,5 @@ exports.updateStore = async (req, res) => {
     runValidators: true
   }).exec()
   req.flash('success', `Successfully updated <b>${store.name}</b>. <a href="/store/${store.slug}">View Store →</a>`)
-  res.redirect(`/stores/${store._id}/edit`)
+  res.redirect(`/stores/${store._id}`)
 }
