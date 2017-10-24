@@ -25,5 +25,7 @@ router.route('/stores/:id')
     asyncMiddleware(storeController.updateStore)
   )
 
+// Show the store by slug
+router.get('/store/:slug', asyncMiddleware(storeController.getStoreBySlug))
 
 module.exports = router
