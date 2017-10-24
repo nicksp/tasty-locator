@@ -10,8 +10,16 @@ router.get('/stores/:id/edit', asyncMiddleware(storeController.renderEditStores)
 
 router.route('/add')
   .get(storeController.renderAddStore)
-  .post(asyncMiddleware(storeController.createStore))
+  .post(
+    storeController.upload,
+    asyncMiddleware(storeController.resize),
+    asyncMiddleware(storeController.createStore)
+  )
 
-router.post('/add/:id', asyncMiddleware(storeController.updateStore))
+router.post('/add/:id',
+  storeController.upload,
+  asyncMiddleware(storeController.resize),
+  asyncMiddleware(storeController.updateStore)
+)
 
 module.exports = router
