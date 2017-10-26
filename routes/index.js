@@ -28,4 +28,7 @@ router.route('/stores/:id')
 // Show the store by slug
 router.get('/store/:slug', asyncMiddleware(storeController.getStoreBySlug))
 
+// Show stores by tag
+router.get('/tags/:tag?', asyncMiddleware(storeController.getStoresByTag))
+
 module.exports = router
