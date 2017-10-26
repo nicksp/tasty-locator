@@ -9,6 +9,10 @@ input, textarea {
   }
 }
 
+input + .button {
+  margin-top: 10px;
+}
+
 label {
   padding: 10px 0;
   display: block;
