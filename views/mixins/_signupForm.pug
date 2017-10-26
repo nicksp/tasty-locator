@@ -2,9 +2,9 @@ mixin signupForm()
   form.form(action="/signup", method="POST")
     h2= title
     label(for="name") Name
-    input(type="text", name="name", id="name")
+    input(type="text", name="name", id="name", required)
     label(for="email") Email Address
-    input(type="email", name="email", id="email")
+    input(type="email", name="email", id="email", required)
     label(for="password") Password
     input(type="password", name="password", id="password")
     label(for="password-confirm") Confirm Password
