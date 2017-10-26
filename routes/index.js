@@ -1,6 +1,7 @@
 const router = require('express').Router()
 
 const storeController = require('../controllers/store.controller')
+const accountController = require('../controllers/account.controller')
 
 const { asyncMiddleware } = require('../handlers/errorHandlers')
 
@@ -31,5 +32,14 @@ router.get('/store/:slug', asyncMiddleware(storeController.getStoreBySlug))
 
 // Show stores by tag
 router.get('/tags/:tag?', asyncMiddleware(storeController.getStoresByTag))
+
+// User login
+router.route('/signin')
+  .get(accountController.renderSigninForm)
+
+// User registration
+router.route('/signup')
+  .get(accountController.renderSignupForm)
+  .post(accountController.validateRegister)
 
 module.exports = router
